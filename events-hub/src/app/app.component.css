@@ -1,0 +1,17 @@
+
+.company-name {
+    font-size: 15px;
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-sidenav-content{
+      font-size: 200%;
+      text-align: center;
+  }
