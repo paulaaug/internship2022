@@ -13,11 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { EventsListComponent } from './events-list/events-list.component';
+import { RegisterComponent } from './register/register.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EventsListComponent
+    EventsListComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { EventsListComponent } from './events-list/events-list.component';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
