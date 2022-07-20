@@ -15,12 +15,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { EventsListComponent } from './events-list/events-list.component';
 import { RegisterComponent } from './register/register.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     EventsListComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

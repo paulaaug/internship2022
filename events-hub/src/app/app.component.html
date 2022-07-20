@@ -1,49 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
- <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Platforma-evenimente</title>
-    <link rel="stylesheet" href="./app.component.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-  </head>
-  <body>
-    <div class="banner">
-      <nav id="nav">
-        <img src="" class="logo" alt="logo-website" />
-        <ul id="linknav">
-          <li><a href="./index.html">Acasa</a></li><!--home page atat pentru clienti cat si pentru organizatori (organizatorii vin aici pentru a se uita si ei la evenimente)-->
-          <li><a href="#">Organizeaza evenimente</a></li>
-          <li>
-            <div class="contulmeu">
-              <span class="material-symbols-outlined">person</span>
-              <a href="#">Contul meu</a>
-            </div>
-          </li>
-           
-          
-        </ul>
-      </nav>
-      <div class="content">
-        <h1 class="maintext">
-          Descopera evenimente, cumpara bilete si distreaza-te
-        </h1>
-      </div>
-      <!--<div class="login">
-        <h1>Alatura-te comunitatii</h1>
-        <div class="border"></div>
-        <button>Creare cont</button>
-        <button>Autentifica-te</button>
-      </div>-->
-      <div class="scrolldown">
-        <p>Distractia te asteapta</p>
-        <span class="material-symbols-outlined da">expand_more</span>
-        </div>
+<div>
+  <mat-toolbar color="primary">
+    <img class="title-icon" src="../assets/logo.png">
+    <a mat-button class="companyName" routerLink="/">
+
+      <span>EventsHub</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div>
+      <a mat-button routerLink="/events-list"> Evenimente </a>
+      <a mat-button routerLink="/"> Adaugă eveniment </a>
+      <a mat-button routerLink="/register"> Devino partener </a>
+      <a mat-button routerLink="/login"> Contul meu </a>
     </div>
-</body>
-</html>
+
+  </mat-toolbar>
+</div>
+<router-outlet></router-outlet>
