@@ -1,18 +1,19 @@
 <div>
-  <mat-toolbar color="primary">
-    <img class="title-icon" src="../assets/logo.png">
-    <a mat-button class="companyName" routerLink="/">
-
-      <span>EventsHub</span>
-    </a>
-    <span class="example-spacer"></span>
-    <div>
-      <a mat-button routerLink="/events-list"> Evenimente </a>
-      <a mat-button routerLink="/"> Adaugă eveniment </a>
-      <a mat-button routerLink="/register"> Devino partener </a>
-      <a mat-button routerLink="/login"> Contul meu </a>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <img class="title-icon" src="../assets/logo.png">
+      <a class="navbar-brand ms-2" routerLink="/"> EventsHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-auto" id="navbarScroll">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item"><a  class="nav-link" routerLink="/events-list">Evenimente</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/register">Devino partener</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/login">Contul meu</a></li>
+        </ul>
+      </div>
     </div>
-
-  </mat-toolbar>
+  </nav>
 </div>
 <router-outlet></router-outlet>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { Md5 } from 'md5-typescript';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 export type User = {
   email: string,
@@ -27,7 +26,7 @@ export class RegisterComponent implements OnInit {
   }
   cannotBeSubmitted = true;
   rePassword = '';
-  constructor(private api: ApiService, private snackBar: MatSnackBar, private router: Router) {
+  constructor(private api: ApiService, private router: Router) {
     this.api.query("getUsers", this.user).then((res) => { console.log("getUsers", res) })
   }
 
@@ -46,7 +45,8 @@ export class RegisterComponent implements OnInit {
 
   }
   openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action);
+    // this.snackBar.open(message, action);
+    console.log(message);
   }
   onFormSubmitted() {
     console.log(this.user);
@@ -96,24 +96,21 @@ export class RegisterComponent implements OnInit {
 
   verifyPasswords(pass1: string, pass2: string) {
     let okay = false;
-    if (!pass1) 
-    {
+    if (!pass1) {
       this.errors.password = "Câmpul parolă este obligatoriu!";
       okay = false;
     }
     else this.errors.password = "";
-      
-    
-    if (!pass2) 
-    {
+
+
+    if (!pass2) {
       this.errors.rePassword = "Câmpul reintroducere parolă este obligatoriu!";
       okay = false;
     }
     else this.errors.rePassword = "";
-      
 
-    if (pass1 != pass2) 
-    {
+
+    if (pass1 != pass2) {
       this.errors.rePassword = "Parolele trebuie să fie identice!";
       okay = false;
     }
