@@ -28,6 +28,8 @@
             <label for="floatingPassword">Reintroduceți parola</label>
             <div *ngIf="errors.rePassword" class="invalid-feedback px-3 py-2 ">
                 {{errors.rePassword}}</div>
+            <div *ngIf="registerError" class="invalid-feedback px-3 py-2 ">
+                {{registerError}}</div>
         </div>
 
         <button (click)="onFormSubmitted()" [disabled]="cannotBeSubmitted"

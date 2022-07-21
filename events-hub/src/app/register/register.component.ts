@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
   constructor(private api: ApiService, private router: Router) {
     this.api.query("getUsers", this.user).then((res) => { console.log("getUsers", res) })
   }
+  registerError: string = '';
 
   ngOnInit(): void {
 
@@ -57,14 +58,18 @@ export class RegisterComponent implements OnInit {
         password: Md5.init(this.user.password),
         partner: this.user.partner
       }
-      this.api.query("insertUser", opt).then(function (res) {
-        console.log("insertUser", res)
-        if (res.rowsAffected != 0) {
-          that.router.navigate(['']);
-          that.openSnackBar("Utilizator adăugat cu succes!", "Okay")
-        }
-        else that.openSnackBar("A intervenit o eroare...", "Trist")
-      })
+      this.api.query("insertUser", opt)
+        .then((res) =>{
+          console.log("insertUser", res)
+          if (res.rowsAffected != 0) {
+            that.router.navigate(['']);
+            that.openSnackBar("Utilizator adăugat cu succes!", "Okay")
+          }
+          else that.openSnackBar("A intervenit o eroare...", "Trist")
+        })
+        .catch(err => {
+         this.registerError = err.error;
+        })
     }
 
   }

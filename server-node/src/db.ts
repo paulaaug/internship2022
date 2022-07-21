@@ -81,8 +81,8 @@ export async function query(ctx: Koa.Context) {
             params: ctx.request.body.params,
             user: ctx.request.body.user
         });
-        ctx.status = 500;
-        ctx.body = "Internal Server Error";
+        ctx.status = 400;
+        ctx.body = err.message;
     }
 }
 

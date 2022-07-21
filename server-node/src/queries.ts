@@ -6,8 +6,9 @@ export default {
     // getEventTypes: `select * from evenimente.dbo.tip_evenimente;`,
     // getEvents: `select * from evenimente.dbo.evenimente;`,
     // verifyUser:  `select * from evenimente.dbo.utilizatori where email=@email and parola=@parola;`
-    insertUser:
-        `INSERT INTO  dbo.[User] (email,password,partner)   
-    VALUES ( @email, @password, @partner );`,
+    // insertUser:
+    //     `INSERT INTO  dbo.[User] (email,password,partner)   
+    // VALUES ( @email, @password, @partner );`,
+    insertUser: 'exec dbo.Register @email, @password, @partner',
     getUsers: `select * from dbo.[User];`
 }
