@@ -1,1 +1,22 @@
-<p>events-list works!</p>
+<button class="btn btn-primary" (click)="showLocations()"> Vezi locatii evenimemte </button>
+
+<!-- arata sau nu locatiile in functie de dorinta user-ului -->
+<div *ngIf="locationVisible">
+    <ol>
+        <li *ngFor="let el of locations">
+            <a [class]="selectedLocationId === el.id ? 'selectedLocation' : ''" href="javascript:void();"
+                (click)="selectedLocationId = el.id">
+                {{el.nume}}
+            </a>
+        </li>
+    </ol>
+</div>
+
+<div *ngIf="selectedLocationId">
+    <ol>
+        <li *ngFor="let el of filteredEventsByLocationId">
+            <h4>{{el.nume}}</h4>
+            <img src="https://www.fabricademagie.ro/var/images/product/458.550/23624-9907314-1-3-1500.jpg">
+        </li>
+    </ol>
+</div>

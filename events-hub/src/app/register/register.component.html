@@ -28,7 +28,7 @@
             <label for="floatingPassword">Reintroduceți parola</label>
             <div *ngIf="errors.rePassword" class="invalid-feedback px-3 py-2 ">
                 {{errors.rePassword}}</div>
-            <div *ngIf="registerError" class="invalid-feedback px-3 py-2 ">
+            <div *ngIf="registerError" class="text-danger">
                 {{registerError}}</div>
         </div>
 

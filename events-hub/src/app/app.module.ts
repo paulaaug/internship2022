@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { EventsListComponent } from './events-list/events-list.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { EventsComponent } from './events/events.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     EventsListComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
